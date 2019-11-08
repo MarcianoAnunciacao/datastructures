@@ -4,6 +4,7 @@ import datastructures.linkedlists.circularlinkedlist.CircularLinkedList;
 import datastructures.linkedlists.doublelinkedlist.DoubleLinkedList;
 import datastructures.linkedlists.Node;
 import datastructures.linkedlists.singlylinkedlist.SinglyLinkedList;
+import datastructures.recursion.Recursion;
 import datastructures.searching.linearsearch.LinearSearch;
 
 /**
@@ -13,7 +14,7 @@ import datastructures.searching.linearsearch.LinearSearch;
 public class App 
 {
     public static void main( String[] args ){
-        Node nodeA = new Node();
+      /*  Node nodeA = new Node();
         nodeA.data = 4;
 
         Node nodeB = new Node();
@@ -67,7 +68,9 @@ public class App
         int [] elements = new int[]{1, 2, 3, 4, 5, 6, 7, 10, 8, 55};
 
         System.out.println("Number in posicion : " + LinearSearch.search(elements, 2));
+*/
 
+        Recursion.reduceByOne(10);
 
     }
 
