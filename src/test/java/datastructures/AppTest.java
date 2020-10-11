@@ -47,4 +47,9 @@ public class AppTest {
     public void testRecursiveBinarySearch(){
         assertEquals(2, Recursion.recursiveBinarySearch(0, 20, 8, elements));
     }
+
+    @Test
+    public void testFibonacciRecursion(){
+        assertEquals(5, Recursion.fibonacci(5));
+    }
 }
