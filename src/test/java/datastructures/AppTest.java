@@ -51,5 +51,6 @@ public class AppTest {
     @Test
     public void testFibonacciRecursion(){
         assertEquals(5, Recursion.fibonacci(5));
+        assertEquals(5, Recursion.fibonacci2(5));
     }
 }
