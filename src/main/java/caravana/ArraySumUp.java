@@ -1,5 +1,7 @@
 package caravana;
 
+import java.util.Arrays;
+
 public class ArraySumUp {
     public static void main(String [] args) {
         int [] sumArray = new int [5];

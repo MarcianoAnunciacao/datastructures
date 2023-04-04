@@ -1,89 +1,77 @@
 package datastructures;
 
-import datastructures.linkedlists.circularlinkedlist.CircularLinkedList;
-import datastructures.linkedlists.doublelinkedlist.DoubleLinkedList;
-import datastructures.linkedlists.Node;
-import datastructures.linkedlists.singlylinkedlist.SinglyLinkedList;
-import datastructures.recursion.Recursion;
-import datastructures.searching.linearsearch.LinearSearch;
+class Node {
+    int data;
+    static int count;
+    Node next;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ){
-      /*  Node nodeA = new Node();
-        nodeA.data = 4;
+    static Node head;
+    static Node tail;
 
-        Node nodeB = new Node();
-        nodeB.data = 4;
-
-        Node nodeC = new Node();
-        nodeC.data = 4;
-
-        Node nodeD = new Node();
-        nodeD.data = 4;
-
-        nodeA.next = nodeB;
-        nodeB.next = nodeC;
-        nodeC.next = nodeD;
-
-        System.out.println(listLength(nodeA));
-        System.out.println(listLength(nodeB));
-
-        SinglyLinkedList myList = new SinglyLinkedList();
-        myList.insert(100);
-        myList.insert(58);
-        myList.insert(99);
-        myList.insert(88);
-
-        myList.insertLast(9999999);
-
-        myList.displayList();
-
-
-        CircularLinkedList circularList = new CircularLinkedList();
-        circularList.insertFirst(100);
-        circularList.insertFirst(58);
-        circularList.insertFirst(99);
-        circularList.insertLast(88);
-
-        circularList.insertLast(9999999);
-
-        circularList.displayList();
-
-        DoubleLinkedList doubleList = new DoubleLinkedList();
-        doubleList.insertFirst(100);
-        doubleList.insertFirst(99);
-        doubleList.insertFirst(98);
-        doubleList.insertFirst(97);
-        doubleList.insertFirst(96);
-
-        doubleList.deleteLast();
-
-        doubleList.displayList();
-
-        int [] elements = new int[]{1, 2, 3, 4, 5, 6, 7, 10, 8, 55};
-
-        System.out.println("Number in posicion : " + LinearSearch.search(elements, 2));
-*/
-
-        Recursion.reduceByOne(10);
-
+    public static Node insert(Node head,int data) {
+        if(head == null){
+            head = new Node();
+            tail = new Node();
+        }else if(head.next == null){
+            Node temp = new Node();
+            temp.data = data;
+            head.next = temp;
+            tail.next = temp;
+            count++;
+        }else {
+            Node temp = new Node();
+            temp.data = data;
+            tail.next.next = temp;
+            tail.next = temp;
+            count++;
+        }
+        return head;
     }
 
-    public static int listLength(Node aNode){
-        int count = 0;
-        Node nodeTemp = aNode;
-        while(nodeTemp != null){
-
-            count++;
-            nodeTemp = nodeTemp.next;
-
+    public static Node delete(Node head, int data) throws Exception {
+        if(head == null){
+            throw new Exception("Linked List is empty");
         }
+        Node temp = head.next;
+        Node prev = head;
+        while(temp != null){
+            if(temp.data == data){
+                prev.next = temp.next;
+                return head;
+            }
+            prev = temp;
+            temp = temp.next;
+        }
+        return head;
+    }
 
-        return count;
+    public static void display(Node head) {
+        Node start = head.next;
+        while(start != null) {
+            System.out.print(start.data + " ");
+            start = start.next;
+        }
+    }
+
+
+    public static void main(String args[]) {
+        Node head = null;
+        head = insert(head, 12);
+        display(head);
+
+        insert(head, 78);
+        insert(head, 85);
+        insert(head, 95);
+        insert(head, 105);
+        insert(head, 205);
+        insert(head, 305);
+        display(head);
+        System.out.println("---------------------------------------------------");
+        try{
+            delete(head, 85);
+        }catch (Exception e){
+            System.out.println("Error, please check it out -> ".concat(e.getMessage()));
+        }
+        display(head);
     }
 }

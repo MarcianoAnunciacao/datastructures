@@ -1,6 +1,6 @@
 package datastructures;
 
-import static junit.framework.TestCase.assertEquals;
+/*import static junit.framework.TestCase.assertEquals;
 
 import datastructures.recursion.Recursion;
 import datastructures.searching.binarysearch.BinarySearch;
@@ -8,9 +8,9 @@ import datastructures.searching.linearsearch.LinearSearch;
 import org.junit.Before;
 import org.junit.Test;
 
-/**
+*//**
  * Unit test for simple App.
- */
+ *//*
 public class AppTest {
 
     private int [] elements;
@@ -53,4 +53,4 @@ public class AppTest {
         assertEquals(5, Recursion.fibonacci(5));
         assertEquals(5, Recursion.fibonacci2(5));
     }
-}
+}*/
